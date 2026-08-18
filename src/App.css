@@ -6,7 +6,7 @@
 .spinner {
   width: 18px;
   height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.877);
   border-radius: 50%;
   border-top-color: #fff;
   animation: spin 0.8s linear infinite;
@@ -62,7 +62,7 @@
 .orb-2 {
   width: 400px;
   height: 400px;
-  background: rgba(6, 182, 212, 0.25);
+  background: rgba(12, 198, 231, 0.25);
   bottom: 10%;
   right: 15%;
   animation-delay: -4s;
@@ -79,8 +79,13 @@
 }
 
 @keyframes floatOrb {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-30px) scale(1.1); }
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-30px) scale(1.1);
+  }
 }
 
 .auth-card {
@@ -102,6 +107,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -286,7 +292,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 15, 25, 0.85);
+  background: rgba(225, 227, 231, 0.85);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--bg-card-border);
   padding: 16px 32px;
@@ -494,7 +500,8 @@
   transition: var(--transition-smooth);
 }
 
-.stat-card:hover, .stat-card.active {
+.stat-card:hover,
+.stat-card.active {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
@@ -527,10 +534,25 @@
   justify-content: center;
 }
 
-.icon-total { background: rgba(99, 102, 241, 0.15); color: var(--primary); }
-.icon-warning { background: var(--status-warning-bg); color: var(--status-warning); }
-.icon-danger { background: var(--status-danger-bg); color: var(--status-danger); }
-.icon-success { background: var(--status-safe-bg); color: var(--status-safe); }
+.icon-total {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+}
+
+.icon-warning {
+  background: var(--status-warning-bg);
+  color: var(--status-warning);
+}
+
+.icon-danger {
+  background: var(--status-danger-bg);
+  color: var(--status-danger);
+}
+
+.icon-success {
+  background: var(--status-safe-bg);
+  color: var(--status-safe);
+}
 
 .stat-value {
   font-size: 32px;
@@ -539,9 +561,17 @@
   margin-bottom: 4px;
 }
 
-.text-amber { color: var(--status-warning); }
-.text-red { color: var(--status-danger); }
-.text-green { color: var(--status-safe); }
+.text-amber {
+  color: var(--status-warning);
+}
+
+.text-red {
+  color: var(--status-danger);
+}
+
+.text-green {
+  color: var(--status-safe);
+}
 
 .stat-subtitle {
   font-size: 12px;
@@ -878,8 +908,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.75; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
 }
 
 /* Empty State & Loader */
@@ -955,8 +992,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-card {

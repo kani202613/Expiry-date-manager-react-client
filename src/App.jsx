@@ -4,14 +4,41 @@ import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import Dashboard from './components/Dashboard';
+import AddProductPage from './components/AddProductPage';
+import EditProductPage from './components/EditProductPage';
 import './App.css';
 
 function MainApp() {
   const { isAuthenticated } = useAuth();
-  const [currentView, setCurrentView] = useState('landing'); // 'landing' | 'login' | 'register'
+  const [currentView, setCurrentView] = useState('landing'); // 'landing' | 'login' | 'register' | 'dashboard' | 'addProduct' | 'editProduct'
+  const [productToEdit, setProductToEdit] = useState(null);
+
+  const handleNavigateToEdit = (product) => {
+    setProductToEdit(product);
+    setCurrentView('editProduct');
+  };
 
   if (isAuthenticated) {
-    return <Dashboard />;
+    if (currentView === 'addProduct') {
+      return <AddProductPage onBackToDashboard={() => setCurrentView('dashboard')} />;
+    }
+    if (currentView === 'editProduct') {
+      return (
+        <EditProductPage
+          productToEdit={productToEdit}
+          onBackToDashboard={() => {
+            setProductToEdit(null);
+            setCurrentView('dashboard');
+          }}
+        />
+      );
+    }
+    return (
+      <Dashboard
+        onNavigateToAddProduct={() => setCurrentView('addProduct')}
+        onNavigateToEditProduct={handleNavigateToEdit}
+      />
+    );
   }
 
   if (currentView === 'login') {

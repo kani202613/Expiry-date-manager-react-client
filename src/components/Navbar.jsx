@@ -2,8 +2,16 @@ import { Plus, LogOut, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Logo from './Logo';
 
-export default function Navbar({ onOpenAddModal }) {
+export default function Navbar({ onOpenAddModal, onNavigateToAddProduct }) {
   const { user, logout } = useAuth();
+
+  const handleAddClick = () => {
+    if (onNavigateToAddProduct) {
+      onNavigateToAddProduct();
+    } else if (onOpenAddModal) {
+      onOpenAddModal();
+    }
+  };
 
   return (
     <header className="navbar">
@@ -13,9 +21,9 @@ export default function Navbar({ onOpenAddModal }) {
         </div>
 
         <div className="nav-right">
-          <button className="btn-add" onClick={onOpenAddModal}>
+          <button className="btn-add" onClick={handleAddClick}>
             <Plus size={18} />
-            <span>Add Item</span>
+            <span>Add Product</span>
           </button>
 
           <div className="user-profile">
