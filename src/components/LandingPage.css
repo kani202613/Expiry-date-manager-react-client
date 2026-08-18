@@ -447,18 +447,143 @@
   color: #ffffff;
 }
 
-/* Responsive Overrides */
-@media (max-width: 768px) {
+/* ==========================================================================
+   Responsive Overrides for Landing Page (Laptop, Tablet, & Mobile)
+   ========================================================================== */
+
+/* Laptops & Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
   .hero-title {
-    font-size: 34px;
+    font-size: 40px;
   }
-  .hero-subtitle {
-    font-size: 15px;
+  .features-grid,
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .section-title {
-    font-size: 26px;
-  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
   .landing-header {
     padding: 12px 16px;
   }
+
+  .landing-nav-btns {
+    gap: 8px;
+  }
+
+  .btn-nav-login,
+  .btn-nav-register {
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .hero-section {
+    padding: 44px 16px 36px 16px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    letter-spacing: -0.3px;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .features-section,
+  .how-it-works-section {
+    padding: 48px 16px;
+  }
+
+  .features-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card,
+  .step-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  .cta-banner-section {
+    padding: 0 16px 48px 16px;
+  }
+
+  .cta-banner-card {
+    padding: 32px 16px;
+    border-radius: 18px;
+  }
+
+  .cta-banner-card h2 {
+    font-size: 22px;
+  }
+
+  .landing-footer {
+    padding: 20px 16px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
 }
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+  }
+
+  .category-chips-row {
+    gap: 6px;
+  }
+
+  .chip-item {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
